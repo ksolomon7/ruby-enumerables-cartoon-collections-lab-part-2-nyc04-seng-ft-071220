@@ -11,15 +11,7 @@ def summon_captain_planet(planeteer_calls)
 end
 
 def long_planeteer_calls(planeteer_calls)
-  planeteer_calls.count do |planet|
-    if planet.length>4
-      true
-    else
-      false
-    end
-  # Use an Enumerable to check if any string in the passed in array is greater than 4 characters long
-  # Return the boolean result of this check
-end
+  planeteer_calls.count any? { |planet| planet.length>4  }
 end
 
 def find_valid_calls(planeteer_calls)
